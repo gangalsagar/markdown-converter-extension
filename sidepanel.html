@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PDF to Markdown</title>
+<link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <header class="sp-header">
+    <div class="sp-logo">PDF → Markdown</div>
+    <div class="sp-actions">
+      <button id="copyBtn" class="btn btn-secondary" disabled>Copy</button>
+      <button id="downloadBtn" class="btn btn-primary" disabled>Download .md</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="dropzone" class="dropzone">
+      <div class="dropzone-inner">
+        <div class="drop-icon">📄</div>
+        <p class="drop-title">Drag & drop a PDF here</p>
+        <p class="drop-sub">or click to choose a file</p>
+        <input type="file" id="fileInput" accept="application/pdf,.pdf" hidden />
+      </div>
+    </section>
+
+    <section id="status" class="status hidden"></section>
+
+    <section id="previewWrap" class="preview-wrap hidden">
+      <div class="preview-meta">
+        <span id="fileName"></span>
+        <span id="pageCount"></span>
+      </div>
+      <pre id="preview" class="preview"></pre>
+    </section>
+  </main>
+
+  <script type="module" src="sidepanel.js"></script>
+</body>
+</html>
